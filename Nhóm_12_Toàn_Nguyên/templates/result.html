@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Kết quả phân cụm{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center" , style="color: red; font-size: 2em; font-weight: bold;">Kết quả phân cụm</div>
+
+    <!-- Cluster Sizes -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h2 class="card-title">Kích thước cụm:</h2>
+            <ul class="list-group">
+                {% for cluster, size in cluster_results.items() %}
+                    <li class="list-group-item">
+                        Cụm {{ cluster }}: {{ size }} customers
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Clustering Plot -->
+    <div class="card shadow-sm">
+        <div class="card-body text-center">
+            <h2 class="card-title">Biểu đồ phân cụm:</h2>
+            <img src="{{ url_for('static', filename='images/clustering_result.png') }}" alt="Clustering Result" class="img-fluid">
+        </div>
+    </div>
+</div>
+{% endblock %}

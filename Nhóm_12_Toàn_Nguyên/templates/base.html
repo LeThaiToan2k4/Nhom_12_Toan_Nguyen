@@ -1,0 +1,90 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Trang chủ{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header { 
+            background-color: #00EE00;
+            color: #111111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            padding: 10px 0;
+        }
+        main {
+            flex: 1;
+            padding: 5px;
+        }
+        footer {
+            background-color: #000022;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 14px;
+            padding: 10px 0;
+        }
+        .footer-box {
+            text-align: center;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Tìm hiểu thuật toán BIRCH trong khai phá dữ liệu</header>
+    <!-- Navbar chung -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">BIRCH</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/customers">Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/upload-form">Upload</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-2">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer style="height: 150px;">
+        <div class="footer-box">
+            Lê Thái Toàn-2001224457<br>Võ Phúc Nguyên-2001223746
+        </div>
+        <div class="footer-box">
+            Phân cụm dữ liệu<br>dựa trên thuật toán BIRCH
+        </div>
+        <div class="footer-box">
+            Data Mining<br>GVHD: Đinh Nguyễn Trong Nghĩa
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
